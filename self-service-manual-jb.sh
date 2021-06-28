@@ -60,4 +60,4 @@ done
 
 
 # echo "Printing all Master IP's for cluster $CLIENT_NAME-$i.jb.io"
-aws ec2 describe-instances --region=eu-west-1 --query 'Reservations[*].Instances[*].[PublicIpAddress]' --filter Name=tag:'k8s.io/role/master',Values=1 --filter Name=tag:'KubernetesCluster',Values= $CLIENT_NAME-*.jb.io --output text | sort -k2f
+aws ec2 describe-instances --region=eu-west-1 --query 'Reservations[*].Instances[*].[PublicIpAddress]' --filters Name=tag:'k8s.io/role/master',Values=1 Name=tag:'KubernetesCluster',Values="$CLIENT_NAME-*.jb.io" --output text | sort -k2f
