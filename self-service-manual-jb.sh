@@ -14,7 +14,7 @@ do
     export NAME="$CLIENT_NAME-$i.jb.io"
     echo "the name is $NAME"
     export VPC_ID="vpc-d7d6e4b1"
-    export KOPS_STATE_STORE="s3://jb-cloud-terraform-vpc-remote-state"
+    export KOPS_STATE_STORE="s3://jb-class-terraform-vpc-remote-state"
     export ZONES="eu-west-1b"
     # export NETWORK_CIDR=172.31.32.0/20
     echo "Creating folder"
